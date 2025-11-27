@@ -1,0 +1,270 @@
+:root {
+    --bg-color: #f5f5f7; /* iOS-like light grey */
+    --card-bg: #ffffff;
+    --text-color: #1d1d1f;
+    --secondary-text: #86868b;
+    --accent-color: #0071e3;
+    --pill-bg: #e5e5ea;
+    --pill-active-bg: #1d1d1f;
+    --pill-active-text: #ffffff;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --modal-overlay: rgba(0, 0, 0, 0.5);
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+header {
+    padding: 2rem 1rem 1rem;
+    text-align: center;
+    background-color: var(--bg-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+h1.site-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    letter-spacing: -0.02em;
+}
+
+/* Horizontal Scrollable Segmented Control */
+.filter-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    padding-bottom: 0.5rem;
+    /* Hide scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+}
+
+.filter-container::-webkit-scrollbar {
+    display: none; /* WebKit */
+}
+
+.segmented-control {
+    display: inline-flex;
+    gap: 0.5rem;
+    padding: 0 1rem;
+}
+
+.filter-pill {
+    background-color: var(--pill-bg);
+    color: var(--text-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 999px; /* Pill shape */
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.filter-pill:hover {
+    background-color: #d1d1d6;
+}
+
+.filter-pill.active {
+    background-color: var(--pill-active-bg);
+    color: var(--pill-active-text);
+}
+
+/* Watch Grid */
+main {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.watch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.watch-card {
+    background-color: var(--card-bg);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.watch-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.watch-card img {
+    width: 100%;
+    height: 300px; /* Fixed height for consistency */
+    object-fit: contain;
+    display: block;
+    padding: 1rem;
+}
+
+.card-info {
+    padding: 1.25rem;
+}
+
+.card-brand {
+    font-size: 0.85rem;
+    color: var(--secondary-text);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--modal-overlay);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+    animation: slideUp 0.3s;
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #fff; /* White against image usually, or handle background */
+    background-color: rgba(0,0,0,0.5);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.2s;
+}
+
+.close-button:hover {
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-body {
+    padding-bottom: 2rem;
+}
+
+#modal-image {
+    width: 100%;
+    height: 350px;
+    object-fit: contain;
+    padding: 1rem;
+}
+
+#modal-title {
+    padding: 1rem 1.5rem 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.brand-tag {
+    padding: 0 1.5rem;
+    color: var(--secondary-text);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.modal-details {
+    padding: 0 1.5rem 1.5rem;
+    color: var(--text-color);
+}
+
+.modal-details p {
+    margin-bottom: 0.5rem;
+}
+
+.button {
+    display: block;
+    width: calc(100% - 3rem);
+    margin: 0 auto;
+    padding: 0.8rem;
+    background-color: var(--accent-color);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.button:hover {
+    background-color: #005bb5;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Tweaks */
+@media (min-width: 768px) {
+    h1.site-title {
+        font-size: 3rem;
+    }
+    
+    .modal-content {
+        margin: 10% auto;
+    }
+}
+
