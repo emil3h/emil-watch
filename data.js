@@ -72,5 +72,38 @@ export const watches = [
         movement: "DUW 4001 manual",
         link: "https://nomos-glashuette.com/en-us/tangente/tangente-101#specs",
         description: "The round watch with the many right angles."
+    },
+    {
+        id: 8,
+        brand: "Omega",
+        model: "Seamaster 300 41",
+        image: "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-300-co-axial-master-chronometer-41-mm-23432412101001-e4e87d.png",
+        price: "$7,600",
+        movement: "Automatic OMEGA 8912",
+        link: "https://www.omegawatches.com/en-us/watch-omega-seamaster-300-co-axial-master-chronometer-41-mm-23432412101001",
+        description: "A modern collection with a deep history.",
+        imageStyle: "transform: scale(1.15);"
+    },
+    {
+        id: 9,
+        brand: "Omega",
+        model: "Speedmaster Moonwatch Professional 42",
+        image: "https://www.omegawatches.com/media/catalog/product/o/m/omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31032425001002-78e3aa.png",
+        price: "$8,600",
+        movement: "Automatic OMEGA 3861",
+        link: "https://www.omegawatches.com/en-us/watch-omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31032425001002",
+        description: "The Moonwatch is one of the world's most iconic timepieces.",
+        imageStyle: "transform: scale(1.15);"
+    },
+    {
+        id: 10,
+        brand: "Casio",
+        model: "CA500WEBF-1A",
+        image: "https://www.casio.com/content/dam/casio/product-info/locales/us/en/timepiece/product/watch/C/CA/CA5/ca-500webf-1a/assets/CA-500WEBF-1A.png.transform/main-visual-pc/image.png",
+        price: "$120",
+        movement: "CR2016 Battery",
+        link: "https://www.casio.com/us/watches/casio/product.CA-500WEBF-1A/",
+        description: "A retro-style calculator watch with a vintage design.",
+        imageStyle: "transform: scale(1.1);"
     }
 ];
